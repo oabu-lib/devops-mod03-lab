@@ -1,0 +1,15 @@
+name: Week 3 CI Demo
+
+on: push
+
+jobs:
+  build:
+    run-ons: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run echo command
+        if: github.ref == 'refs/heads/main'
+        run: echo "CI pipeline is running via GitHub Actions!"
